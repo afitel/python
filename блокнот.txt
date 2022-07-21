@@ -1,0 +1,879 @@
+1.«Максимум из двух чисел»
+
+a=input('Say first number ')
+b=input('Say second number ')
+if a>b:
+    print(a,'is the biggest one')
+else:
+    print (b, 'is the biggest one')
+
+2. Знак цифры
+a=int(input('Say number '))
+if a<0:
+    print('Sign(a)=-1')
+elif a==0 :
+    print ('Sign(a)=0')
+else:
+    print ('Sign(a)=1')
+3. Шахматы
+
+a=int(input('Say column of the first place'))
+b=int(input('Say line of the first place'))
+c=int(input('Say column of the second place'))
+d=int(input('Say line of the second place'))
+if ((a%2==0 and b%2==0) or (a%2==1 and b%2==1)) and ((c%2==0 and d%2==0) or (c%2==1 and d%2==1)):
+    print ('You have chosen the same colours')
+elif (not (a%2==0 and b%2==0) and not(a%2==1 and b%2==1)) and (not(c%2==0 and d%2==0) and not (c%2==1 and d%2==1)):
+    print ('You have chosen the same colours')
+else:
+    print ('You have chosen the different colours')
+
+4. Високосный год
+
+a=int(input('Which year you want to test?'))
+if a%400==0:
+    print ('This is a leap year.')
+elif a%100==0:
+    print('This is not a leap year.')
+elif a%4==0:
+    print('This is a leap year.')
+else:
+    print ('This is not a leap year.')
+
+
+5.Наименьшее из трех чисел
+
+a= float(input('Say the first number '))
+b= float(input('Say the second number '))
+c= float(input('Say the third number '))
+if a<b:
+    if c<a:
+        print ('The lowest is', c)
+    else:
+        print('The lowest is', a)
+else:
+    if c<b:
+        print('The lowest is', c)
+    else:
+        print('The lowest is', b) 
+
+6. Проверка на схожесть трех чисел.
+
+a= float(input('Say the first number '))
+b= float(input('Say the second number '))
+c= float(input('Say the third number '))
+if a==b:
+    if a==c:
+        print('All numbers are the same')
+    else:
+        print('Two of numbers are the same')
+else:
+    if b==c:
+        print('Two of numbers are the same')
+    else:
+        if a==c:
+            print('Two of numbers are the same')
+        else:
+            print('All numbers are different')
+
+
+7. Ход ладьи(вертикаль, горизонталь)+диагональное движение   (так ходит ферзь)
+
+print('Say where is now your rook. At first tell the column, then the line.')
+a=int(input('Column '))
+b=int(input('Line '))
+print('Okey. Now tell where you want to put your rook. Likewise tell the number of the column and then the number of the line ')
+c=int(input('Column '))
+d=int(input('Line '))
+if c==a and (0<d<b or b<d<9):
+    print ('Yes')
+elif d==b and (0<c<a or a<c<9):
+    print('Yes')
+elif 0<abs(c-a)==abs(b-d)<8:
+    print('Yes')
+else:
+    print('Unfortunately, you can not make this move with rook. ')
+
+8. Ход коня. 
+
+print('Say where is now your rook. At first tell the column, then the line.')
+a=int(input('Column '))
+b=int(input('Line '))
+print('Okey. Now tell where you want to put your rook. Likewise tell the number of the column and then the number of the line ')
+c=int(input('Column '))
+d=int(input('Line '))
+if not (0<a<9) or not (0<b<9) or not (0<c<9) or not (0<d<9):
+    print('Unfortunately, you can not make this move with rook. ')
+if (abs(c-a)==1 and abs(b-d)==2) or (abs(c-a)==2 and abs(b-d)==1):
+    print('Yes')
+else:
+    print('Unfortunately, you can not make this move with rook. ')
+
+8. Ход короля
+
+print('Say where is now your rook. At first tell the column, then the line.')
+a=int(input('Column '))
+b=int(input('Line '))
+print('Okey. Now tell where you want to put your rook. Likewise tell the number of the column and then the number of the line ')
+c=int(input('Column '))
+d=int(input('Line '))
+if c==a and abs(b-d)==1:
+    print ('Yes')
+elif d==b and abs(a-c)==1:
+    print('Yes')
+elif abs(c-a)==abs(b-d)==1:
+    print('Yes')
+else:
+    print('Unfortunately, you can not make this move with rook. ')
+
+9. Ход слона (диагональ)
+
+print('Say where is now your rook. At first tell the column, then the line.')
+a=int(input('Column '))
+b=int(input('Line '))
+print('Okey. Now tell where you want to put your rook. Likewise tell the number of the column and then the number of the line ')
+
+c=int(input('Column '))
+d=int(input('Line '))
+if 0<abs(c-a)==abs(b-d)<8:
+    print('Yes')
+else:
+    print('Unfortunately, you can not make this move with rook. ')
+
+10. Шоколадка.
+
+n=int(input('Number of horizontal squares'))
+m=int(input('Number of vertical squares'))
+k=int(input('Number of squares, you want to receive'))
+if k%m==0 and 0<k//m<n:
+    print("Yes")
+elif k%n==0 and 0<k//n<m:
+    print("Yes")
+else:
+    print('Unfortunately, you can not receive such number of squares.')
+
+11. Последняя цифра числа 
+
+a = int(input('Tell the numer '))
+print('The last number is', a%10)
+
+12. МКАД
+
+v = float(input('Tell the speed in km/h '))
+t = float(input('Tell time in hours '))
+if v > 0:
+    s = abs(t*v)%109
+else:
+    s = 109 - (abs(t*v)%109)
+if s == 109:
+    print('The car is in the 0 km.')
+print('The car now is in the', s, 'km.')
+
+13. Первая цифра после запятой
+
+x = float(input('Tell the number '))
+x=x*10
+print('The number before comma is', (int(x))%10)
+
+14. Конец уроков
+
+x = int(input('Tell us the number of lessen '))
+if 0 < x < 11:
+    if x % 2 == 1:
+        print('You are free of school after', end=' ')
+        print(8 + x, 50 - 5 * x, sep=':', end=' ')
+        print("o'clock.")
+    elif x == 10:
+        print('You are free of school after', end=' ')
+        print('17', '55', sep=':', end=' ')
+        print("o'clock.")
+    else:
+        print('You are free of school after', end=' ')
+        print(8 + x, 45 - 5 * x, sep=':', end=' ')
+        print("o'clock.")
+else:
+    print('Dear, fortunately you can not have this number of lessens in one day.')
+
+
+
+15. Автопробег
+
+import math as m
+n = float(input('Tell us number of kilometres you are able to run in one day'))
+k = float(input('Tell us the number of kilometres you are planning to run'))
+print('You can do that on', m.ceil(k/n), 'days.')
+
+16. Цена пирожков.
+
+print('Tell us the price of cake in your canteen')
+d = int(input('Dollars: '))
+c = int(input('Cents: '))
+if c > 100:
+    print('Unreal situation. Try again.')
+    c = int(input('Cents: '))
+n = int(input('Say, how many cakes you want to buy '))
+s = (d+c/100) * n
+print('You need to pay', int(s), 'dollars and', round((s-int(s)) * 100), 'cents.')
+
+17. Разность времени.
+
+print('Tell us the first period of time')
+h01 = int(input('Hours: '))
+if 0 > h01  or h01 > 24:
+    print ('You have made a mistake. Try again: ')
+    h01 = int(input('Hours: '))
+m01 = int(input('Minutes: '))
+if 0 > m01  or m01 > 60:
+    print ('You have made a mistake. Try again: ')
+    m01 = int(input('Minutes: '))
+s01 = int(input('Seconds: '))
+if 0 > s01  or s01 > 60:
+    print ('You have made a mistake. Try again: ')
+    s01 = int(input('Seconds: '))
+print('Tell us the second period of time')
+h02 = int(input('Hours: '))
+if 0 > h01  or h01 > 24:
+    print ('You have made a mistake. Try again: ')
+    h02 = int(input('Hours: '))
+m02 = int(input('Minutes: '))
+if 0 > m02  or m02 > 60:
+    print ('You have made a mistake. Try again: ')
+    m02 = int(input('Minutes: '))
+s02 = int(input('Seconds: '))
+if 0 > s02  or s02 > 60:
+    print ('You have made a mistake. Try again: ')
+    s02 = int(input('Seconds: '))
+if (h01 > h02) or (h01 == h02 and m01 > m02) or (h01 == h02 and m01 == m02 and s01 > s02):
+    h1 = h02
+    m1 = m02
+    s1 = s02
+    h2 = h01
+    m2 = m01
+    s2 = s01
+else:
+    h1 = h01
+    m1 = m01
+    s1 = s01
+    h2 = h02
+    m2 = m02
+    s2 = s02
+print('Between this periods of time have past', (h2*3600+m2*60+s2) - (h1*3600+m1*60+s1) , 'seconds.')
+
+
+18. Улитка и труба.
+
+import math as m
+print('All values are mentioned in METERS.')
+h = int(input('The height of pipe is: '))
+a = int(input('During the day the snail raises in '))
+b = int(input('During the night the snail raises in '))
+if a < b:
+    print('Unfortunately, this snail is unlucky. Look around and find another one, dear.')
+    a = int(input('During the day the snail raises in '))
+    b = int(input('During the night the snail raises in '))
+print('The snail will cope with pipe in', m.ceil(h/(a-b)), 'days.' )
+
+19. Число десятков.
+
+x = float(input(('We are waiting for number: ')))
+print('The number of tens is ', x%100//10 )
+
+20. Сумма цифр трехзначного числа.
+
+x = int(input(('We are waiting for number: ')))
+if x<99 or x>1000:
+    print('We work only with three-digit numbers. Try again.')
+    x = int(input(('We are waiting for number: ')))
+print('The sum of numbers is ', x%100//10 + x//100 + x%10 )
+
+
+21. Гипотенуза
+
+import math as m
+a = float(input())
+b = float(input())
+print(m.sqrt(a**2 + b**2))
+
+22. Отклонение стрелки в градусах от начала.
+
+m = int(input('Minutes: '))
+if 0 > m  or m > 60:
+    print ('You have made a mistake. Try again: ')
+    m = int(input('Minutes: '))
+s = int(input('Seconds: '))
+if 0 > s  or s > 60:
+    print ('You have made a mistake. Try again: ')
+    m = int(input('Seconds: '))
+print('The big hand has deviate', (h*3600 + m*60 + s)/120, 'degrees.')
+
+23. Отклонение минутной стрелки по отклонению часовой.
+
+print('On how many degrees has the big hand deviate? ')
+a = float(input())
+if a < 0 or a > 360:
+    print('You have made an error. Try again:')
+    print('On how many degrees has the big hand deviate? ')
+print('The small hand has deviate ', 60*(a*0.2 - 6*(120*a//3600) - ((a*120)%3600%60)/600), 'degrees.')
+
+24. Время из градусов часов
+
+
+import math as m
+print ('On how many degrees has the big hand deviate? ')
+a = float(input())
+if a < 0 or a > 360:
+    print('You have made an error. Try again:')
+    print('On how many degrees has the big hand deviate? ')
+print('The time is', end=' ')
+print(m.floor(120*a//3600), m.floor(a*2 - 60*(120*a//3600) - ((a*120)%3600%60)/60), m.floor((a*120)%3600%60), sep=':')
+
+
+25. Вклад в банке
+
+p = float(input('In this bank the interest rate is '))
+print('The deposit is: ')
+a = int(input('Dollars: '))
+if a < 0:
+    print('You have made a mistake. Try again.')
+    a = int(input('Dollars: '))
+b = int(input('Cents: '))
+if b < 0 or b > 100:
+    print('You have made a mistake. Try again.')
+    b = int(input('Cents: '))
+print('The sum after one year will be', int(((a*100+b) + (a*100+b)*p/100)/100), 'dollars',
+      round((((a*100+b) + (a*100+b)*p/100)/100 - int(((a*100+b) + (a*100+b)*p/100)/100))*100), 'cents.')
+
+26. Даны два целых числа A и B (при этом A ≤ B). Выведите все числа от A до B включительно.
+ 
+
+print('Tell us two numbers:')
+a0 = int(input('First: '))
+b0 = int(input('Second: '))
+if a0 > b0:
+    a = b0
+    b = a0
+else:
+    a = a0
+    b = b0
+for i in range(a, b+1):
+    print(i)
+
+27. Даны два целых числа A и В. Выведите все числа от A до B включительно, в порядке возрастания, если A < B, или в порядке убывания в противном случае.
+
+
+print('Tell us two numbers:')
+a = int(input('First: '))
+b = int(input('Second: '))
+if a <= b:
+    for i in range(a, b+1):
+        print(i, end=' ')
+else:
+    for i in range(a, b-1, -1):
+        print(i, end=' ')
+
+28.  Выведите все нечётные числа от A до B включительно, в порядке убывания
+
+print('Tell us two numbers:')
+a0 = int(input('First: '))
+b0 = int(input('Second: '))
+if a0 < b0:
+    a = b0
+    b = a0
+elif a0 == b0:
+    print('Please, choose two different numbers.')
+    a0 = int(input('First: '))
+    b0 = int(input('Second: '))
+else:
+    a = a0
+    b = b0
+for i in range(a-abs(a+1)%2, b-1, -2):
+    print(i-abs(i+1)%2)
+
+
+29. Сумма 10 чисел.
+
+y = 0
+for i in range(10):
+    x = float(input(('Tell the number ')))
+    y = x + y
+print('The sum is', y)
+
+30. Сумма n чисел, где n задаётся наперёд.
+
+n = int(input('Tell the amount of numbers you need to add'))
+y = 0
+for i in range(n):
+    x = float(input('Tell the number '))
+    y = x + y
+print('The sum is', y)
+
+31. Сумма кубов.
+
+n = int(input('Tell the number N '))
+x = 0
+for i in range(n+1):
+    x += i**3
+print('The sum of cubes is', x)
+
+32. Факториал.
+
+n = int(input('Tell the number N '))
+x = 1
+for i in range(n):
+    x = x*(i+1)
+print('N! =', x)
+
+
+33. Сумма факториалов.
+
+n = int(input('Tell the number N '))
+y = 0
+x = 1
+for i in range(n):
+    x = x*(i+1)
+    y = y + x
+print('The sum: 1!+2!+3!+...+N! =', y)
+
+34. Сколько нулей было введено? (в виде чисел, не цифр)
+
+print('How many numbers you want to test?')
+n = int(input())
+b = 0
+for i in range(n):
+    print('The number', i+1, 'is', end=': ')
+    a = int(input())
+    if a == 0:
+        b = b+1
+print('You have entered', b, 'zeroes.')
+
+35. Лесенка
+
+n = int(input(('Tell the number n ')))
+while n < 0 or n > 10:
+    print('Unfortunately, you can enter only numbers from 1 to 9. Try again.')
+    n = int(input(('Tell the number n')))
+
+for i in range(n+1):
+    for j in range(i):
+        print(j+1, end=(''))
+    print()
+
+
+
+36. Упущенная карточка из последовательности.
+
+n = int(input('Tell the number n '))
+s = 0
+for i in range(1, n):
+    x = int(input('The number:'))
+    s = s + i - x
+s += n
+print('You have lost', s, 'card.')
+
+37. Срезы Дана строка.
+
+Сначала выведите третий символ этой строки.
+
+Во второй строке выведите предпоследний символ этой строки.
+
+В третьей строке выведите первые пять символов этой строки.
+
+В четвертой строке выведите всю строку, кроме последних двух символов.
+
+В пятой строке выведите все символы с четными индексами (считая, что индексация начинается с 0, поэтому символы выводятся начиная с первого).
+
+В шестой строке выведите все символы с нечетными индексами, то есть начиная со второго символа строки.
+
+В седьмой строке выведите все символы в обратном порядке.
+
+В восьмой строке выведите все символы строки через один в обратном порядке, начиная с последнего.
+
+В девятой строке выведите длину данной строки.
+
+
+x = input('Print the line')
+print(x[2])
+print(x[-2])
+print(x[0:5])
+n = len(x)
+print(x[:-2])
+print(x[0::2])
+print(x[1::2])
+print(x[::-1])
+
+38. Количество слов.
+
+x = input('Print the line ')
+print('You have entered', x.count(' ')+ 1, 'words.')
+
+39. Две половинки поменять местами.
+
+x = input('Print the line ')
+n = len(x)
+m = n//2 + n % 2
+s1 = x[0:m]
+s2 = x[m:]
+print(s2 + s1)
+
+40. Переставить два слова.
+
+x = input('Print the line ')
+while x.count(' ') != 1:
+    print('You should tell us exactly two words. Try again.')
+    x = input('Print the line ')
+m = x.find(' ')
+x1 = x[0:m]
+x2 = x[m+1:]
+print(x2, x1)
+
+41. Первое и последнее вхождение.
+
+x = input('Print the line ')
+m = x.count('f')
+if m == 1:
+    print(x.find('f')+1)
+elif m == 0:
+    print()
+else:
+    print(x.find('f')+1, x.rfind('f')+1 )
+
+42. Номер второго вхождения.
+
+x = input('Print the line ')
+m = x.count('f')
+if m == 1:
+    print('-1')
+elif m == 0:
+    print('-2')
+else:
+    print(x.find('f',x.find('f')+1))
+
+43. x = input('Print the line ')
+m = x.count('f')
+while m == 1 or m == 0:
+    print('Your stroke should include at least two letters "f". Try again')
+    x = input('Print the line ')
+    m = x.count('f')
+elif m == 0:
+    print('-2')
+else:
+    print(x.find('f',x.find('f')+1))
+
+44. Удаление фрагмента.
+
+x = input('Print the line ')
+m = x.count('h')
+while m == 1 or m == 0:
+    print('Your stroke should include at least two letters "h'
+          '". Try again')
+    x = input('Print the line ')
+    m = x.count('h')
+a = x.find('h')
+b = x.rfind('h')
+print(x[:a] + x[b + 1:])
+
+45. Обращение фрагмента внутри строки задом наперёд.
+
+x = input('Print the line ')
+m = x.count('h')
+while m == 1 or m == 0:
+    print('Your stroke should include at least two letters "h'
+          '". Try again')
+    x = input('Print the line ')
+    m = x.count('h')
+a = x.find('h')
+b = x.rfind('h')
+y = x[a+1:b]
+print(x[:a+1] + y[::-1] + x[b:])
+
+
+46. Замена подстроки.
+
+x = input('Print the line ')
+print(x.replace('1', 'one'))
+
+47. Удаление символа
+
+x = input('Print the line ')
+print(x.replace('@', ''))
+
+48. Замена внутри фрагмента.
+
+x = input('Print the line ')
+a = x.find('h')
+b = x.rfind('h')
+print(x[:a+1] + x[a+1:b].replace('h', 'H') + x[b:])
+
+49. Удалить каждый третий символ.
+
+x = input('Print the line ')
+n = len(x)
+for i in range(n):
+    if i % 3 == 0:
+        print(x[i+1:i+3], end='')
+
+50. Список квадратов
+
+1) n = int(input())
+
+for i in range(1, n+1):
+    if i**2 <= n:
+        print(i**2, end=' ')
+2) n = int(input())
+i = 1
+while i**2 <= n:
+    print(i ** 2, end=' ')
+    i += 1
+
+51. Минимальный делитель.
+
+n = int(input())
+while n < 2:
+    n = int(input('You should choose a number not less then 2. Try again.'))
+i = 2
+while n % i != 0:
+    i += 1
+print('The least divider is', i)
+
+52. Степень двойки
+
+n = int(input())
+i = 0
+y = 1
+while y <= n:
+    y *= 2
+    i += 1
+print(i-1, y/2)
+
+53. Утренняя пробежка. 
+
+x = float(input('The number of km the sportsman have run at the first day: '))
+y = float(input('The number of km the sportsman have to run: '))
+i = 1
+while x < y:
+    x = 1.1 * x
+    i += 1
+print(i)
+
+54. Длина последовательности.
+
+n = int(input('Tell us the number'))
+i = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    i+=1
+    n = int(input('Tell us next number'))
+else:
+    print(i)
+
+55. Сумма последовательности.
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    y += n
+    i+=1
+    n = int(input('Tell us next number'))
+else:
+    print(y)
+
+56. Среднее значение.
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n != 0:
+    y += n
+    i+=1
+    n = int(input('Tell us next number'))
+else:
+    print(round(y/(i-1), 3))
+
+57. Максимум последовательности
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    if n > y:
+        y = n
+    i += 1
+    n = int(input('Tell us next number'))
+else:
+    print(y)
+
+58. Индекс максимума.
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    i += 1
+    if n > y:
+        y = n
+        j = i
+    n = int(input('Tell us next number'))
+else:
+    print(j)
+
+59. Количество четных элементов последовательности
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    if n % 2 == 0:
+        i += 1
+    n = int(input('Tell us next number'))
+else:
+    print(i)
+
+
+60. Последовательность, числа которые больше предыдущих.
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    if n > y:
+        i += 1
+    y = n
+    n = int(input('Tell us next number'))
+else:
+    print(i-1)
+
+
+61. Второй максимум.
+
+n = int(input('Tell us the number'))
+y = 0
+z = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    if n >= y:
+        z = y
+        y = n
+    elif n >= z :
+        z = n
+    n = int(input('Tell us next number'))
+else:
+    print(z)
+
+62. Количество элементов, равных максимуму.
+
+n = int(input('Tell us the number'))
+i = 0
+y = 0
+z = 0
+while n < 0:
+    print('You should choose non-negative numbers. Try again')
+    n = int(input('Tell us the number'))
+while n > 0:
+    if n > y:
+        y = n
+        i = 1
+    elif n == y:
+        i += 1
+    n = int(input('Tell us next number'))
+else:
+    print(i)
+
+63. Числа Фибоначчи
+
+n = int(input('Tell us the number'))
+z = 1
+x = 0
+y = 0
+if n == 0:
+    z = 0
+elif n == 1:
+    z = 1
+else:
+    for i in range (n-1):
+        x = z
+        z = z + y
+        y = x
+print(z)
+
+64. Номер числа Фибоначчи.
+
+
+n = int(input('Tell us the number'))
+z = 1
+x = 0
+y = 0
+if n == 0:
+    print('The number belongs to Fibonacci sequence. Its number is 0')
+elif n == 1:
+    print('The number belongs to Fibonacci sequence. Its number is 1 or 2')
+elif n == 2:
+    print('The number belongs to Fibonacci sequence. Its number is 3')
+elif n == 3:
+    print('The number belongs to Fibonacci sequence. Its number is 4')
+else:
+    for i in range(n-1):
+        x = z
+        z = z + y
+        if z == n:
+            print('The number belongs to Fibonacci sequence. Its number is', i+2)
+            break
+        y = x
+
+    else:
+        print('The number does not belong to Fibonacci sequence.')
+
+65. Максимальное число идущих подряд равных элементов.
+
+x = float(input('Tell us the number '))
+i = 1
+n = 0
+while x != 0:
+    y = x
+    x = float(input('Tell us the number '))
+    if x == y:
+        i += 1
+    else:
+        if i > n:
+            n = i
+        i = 1
+print(n)
+
+66. Стандартное отклонение
+
+n = 0
+su = 0
+kv = 0
+x = int(input('Tell the number'))
+while x != 0:
+    su += x
+    n += 1
+    kv += x**2
+    x = int(input('Tell the next number'))
+s = su/n
+z = ((n*s**2 - 2*s*su + kv)/(n-1))**0.5
+print(z)
+
+67. 
+
+ 
+
